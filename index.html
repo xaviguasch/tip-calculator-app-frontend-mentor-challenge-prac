@@ -1,44 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./style.css" />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Tip calculator app</title>
 
-  Bill
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style></style>
+  </head>
+  <body>
+    <div class="content">
+      <h1 class="title">Spl<br />tter</h1>
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+      <div class="calculator">
+        <div class="input-section">
+          <div class="sub">
+            <div class="label">Bill</div>
+            <div class="input-box">
+              <img class="dollar-icon" src="./images/icon-dollar.svg" alt="" />
+              <input type="number" placeholder="0" />
+            </div>
+          </div>
+          <div class="sub">
+            <div class="label">Select Tip %</div>
+            <div class="grid">
+              <div class="percent-item">
+                <input
+                  type="radio"
+                  name="percent-item-radio"
+                  id="radio5"
+                  value="5"
+                  class="percent-item__radio"
+                />
+                <label for="radio5" class="percent-item__label">5%</label>
+              </div>
+              <div class="percent-item">
+                <input
+                  type="radio"
+                  name="percent-item-radio"
+                  id="radio10"
+                  value="10"
+                  class="percent-item__radio"
+                />
+                <label for="radio10" class="percent-item__label">10%</label>
+              </div>
+              <div class="percent-item">
+                <input
+                  type="radio"
+                  name="percent-item-radio"
+                  id="radio15"
+                  value="15"
+                  class="percent-item__radio"
+                />
+                <label for="radio15" class="percent-item__label">15%</label>
+              </div>
+              <div class="percent-item">
+                <input
+                  type="radio"
+                  name="percent-item-radio"
+                  id="radio25"
+                  value="25"
+                  class="percent-item__radio"
+                />
+                <label for="radio25" class="percent-item__label">25%</label>
+              </div>
+              <div class="percent-item">
+                <input
+                  type="radio"
+                  name="percent-item-radio"
+                  id="radio50"
+                  value="50"
+                  class="percent-item__radio"
+                />
+                <label for="radio50" class="percent-item__label">50%</label>
+              </div>
+              <div class="percent-item">
+                <input
+                  type="radio"
+                  name="percent-item-radio"
+                  id="radioCustom"
+                  value="custom"
+                  class="percent-item__radio"
+                />
+                <label for="radioCustom" class="percent-item__label custom">
+                  <span>Custom</span>
+                  <input type="number" placeholder="0" class="custom-hidden-input" />
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="sub">
+            <div class="label">
+              <span>Number of people</span><span class="error">Can't be zero</span>
+            </div>
+            <div class="input-box">
+              <img src="./images/icon-person.svg" alt="" />
+              <input type="number" placeholder="0" />
+            </div>
+          </div>
+        </div>
+        <div class="result-section">
+          <div class="sub">
+            <div class="result-label">
+              <span class="result-label__big">Tip Amount</span>
+              <span class="result-label__small">/ person</span>
+            </div>
+            <div class="result-amount">$ <span>0.00</span></div>
+          </div>
+          <div class="sub">
+            <div class="result-label">
+              <span class="result-label__big">Total</span>
+              <span class="result-label__small">/ person</span>
+            </div>
+            <div class="result-amount">$ <span>0.00</span></div>
+          </div>
+          <button class="btn">Reset</button>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="attribution">
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. Coded by <a href="#">Xavi Guasch</a>.
+        </div>
+      </footer>
+    </div>
 
-  Number of People
+    Bill Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip Amount / person Total
+    / person Reset
 
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <script src="./index.js"></script>
+  </body>
 </html>
