@@ -70,6 +70,22 @@ img {
 /* ================== */
 /* Typography */
 /* ================== */
+.percent-item__label {
+  font-size: var(--fs-24);
+}
+
+.result-label__big {
+  color: var(--clr-white);
+}
+
+.result-label__small {
+  color: var(--clr-dark-grayish-cyan-2);
+}
+
+.result-amount {
+  color: var(--clr-strong-cyan);
+  font-size: var(--fs-32);
+}
 
 /* ================== */
 /* Buttons & inputs */
