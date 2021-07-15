@@ -44,7 +44,8 @@
   --fs-80: 5rem;
 
   --clr-strong-cyan: hsl(172, 67%, 45%);
-  --clr-hover-cyan: hsl(172, 61%, 77);
+  --clr-hover-cyan: hsla(172, 61%, 77%, 1);
+
   --clr-very-dark-cyan: hsl(183, 100%, 15%);
   --clr-dark-grayish-cyan: hsl(186, 14%, 43%);
   --clr-dark-grayish-cyan-2: hsl(184, 14%, 56%);
@@ -111,7 +112,7 @@ img {
 
 .btn:hover,
 .btn:focus {
-  background: var(--clr-hover-cyan-2);
+  background: var(--clr-hover-cyan);
 }
 
 /* ================== */
@@ -254,11 +255,21 @@ input {
 .people-area {
   position: relative;
 }
-.error {
+.error-message {
   position: absolute;
   display: none;
   top: 0;
   right: 0;
+}
+
+.error-message.show {
+  display: block;
+  color: red;
+}
+
+#input-box-people.error {
+  border: 2px solid red;
+  border-radius: 0.25em;
 }
 
 /* Result section */

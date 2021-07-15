@@ -7,12 +7,14 @@ const totalAmountSel = document.querySelector('#total-amount')
 const tipPercentageSels = document.querySelectorAll('.percent-item__radio')
 const percentItemSels = document.querySelectorAll('.percent-item')
 const customTipSel = document.querySelector('.custom-tip-input')
+const errorPeopleSel = document.querySelector('.error-message')
+const inputBoxPeople = document.querySelector('#input-box-people')
 
 const resetBtn = document.querySelector('#reset-btn')
 
 let tipPercentage = ''
 let billAmount = 0
-let people = 0
+let people = 1
 
 const updateBill = (money) => {
   billAmount = +money
@@ -55,6 +57,16 @@ const handleCustomTip = (tipValue) => {
 }
 
 const displayResults = () => {
+  if (people <= 0) {
+    errorPeopleSel.classList.add('show')
+    inputBoxPeople.classList.add('error')
+    tipAmountSel.textContent = `${'--'}`
+    totalAmountSel.textContent = `${'--'}`
+  } else {
+    errorPeopleSel.classList.remove('show')
+    inputBoxPeople.classList.remove('error')
+  }
+
   if (people > 0 && billAmount > 0) {
     const tipAmount = billAmount * tipPercentage
     const totalAmount = (billAmount + tipAmount) / people
@@ -64,6 +76,21 @@ const displayResults = () => {
   }
 }
 
+const reset = () => {
+  tipAmountSel.textContent = `${'--'}`
+  totalAmountSel.textContent = `${'--'}`
+
+  tipPercentage = ''
+  billAmount = 0
+  people = 1
+
+  numPeopleSel.value = people
+
+  percentItemSels.forEach((item) => {
+    item.classList.remove('clicked')
+  })
+}
+
 inputMoneySel.addEventListener('input', () => updateBill(inputMoneySel.value))
 numPeopleSel.addEventListener('input', () => updatePeople(numPeopleSel.value))
 tipPercentageSels.forEach((tipSel) => {
@@ -71,3 +98,5 @@ tipPercentageSels.forEach((tipSel) => {
 })
 
 customTipSel.addEventListener('input', () => handleCustomTip(customTipSel.value))
+
+resetBtn.addEventListener('click', reset)
