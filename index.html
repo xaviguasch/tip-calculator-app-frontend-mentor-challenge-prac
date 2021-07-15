@@ -79,18 +79,8 @@
                 />
                 <label for="radio50" class="percent-item__label">50%</label>
               </div>
-              <div class="percent-item percent-item--custom">
-                <input
-                  type="radio"
-                  name="percent-item-radio"
-                  id="radioCustom"
-                  value="custom"
-                  class="percent-item__radio"
-                />
-                <label for="radioCustom" class="percent-item__label custom">
-                  <span>Custom</span>
-                  <input type="number" placeholder="0" class="custom-hidden-input" />
-                </label>
+              <div class="input-box input-box--custom-tip">
+                <input class="custom-tip-input" type="number" placeholder="custom" />
               </div>
             </div>
           </div>
@@ -111,14 +101,14 @@
               <span class="result-label__big">Tip Amount</span>
               <span class="result-label__small">/ person</span>
             </div>
-            <div class="result-amount">$<span>0.00</span></div>
+            <div id="tip-amount" class="result-amount">$<span>0.00</span></div>
           </div>
           <div class="sub result-el-area">
             <div class="result-label">
               <span class="result-label__big">Total</span>
               <span class="result-label__small">/ person</span>
             </div>
-            <div class="result-amount">$<span>0.00</span></div>
+            <div id="total-amount" class="result-amount">$<span>0.00</span></div>
           </div>
           <button id="reset-btn" class="btn">Reset</button>
         </div>

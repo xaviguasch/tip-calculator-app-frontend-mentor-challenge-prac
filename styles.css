@@ -118,13 +118,13 @@ img {
 /* Utility styles */
 /* ================== */
 
+/* This takes away the spinner widget in the input */
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
 /* Firefox */
 input[type='number'] {
   -moz-appearance: textfield;
@@ -165,7 +165,7 @@ input {
   width: 100%;
   position: relative;
   margin-top: 0.4em;
-  border: 2px solid transparent;
+  border: 2px solid var(--clr-light-input-bg);
 }
 
 .input-box input {
@@ -177,6 +177,13 @@ input {
   text-align: right;
   padding: 0.25em 0.725em;
   color: var(--clr-very-dark-cyan);
+  outline: none;
+}
+
+.input-box:hover,
+.input-box:focus {
+  border-radius: 0.25em;
+  border: 2px solid var(--clr-strong-cyan);
 }
 
 .dollar-icon,
@@ -202,7 +209,6 @@ input {
 .percent-item {
   background: var(--clr-very-dark-cyan);
   position: relative;
-  height: 48px;
 
   display: flex;
   justify-content: center;
@@ -220,15 +226,8 @@ input {
   background: var(--clr-light-grayish-cyan);
 }
 
-.percent-item--custom {
-  background: var(--clr-light-input-bg);
-  justify-content: flex-end;
-  padding: 0 1em;
-}
-.percent-item--custom:hover,
-.percent-item--custom:focus {
-  border: 2px solid var(--clr-strong-cyan);
-  background: var(--clr-light-input-bg);
+.input-box--custom-tip {
+  margin-top: 0;
 }
 
 .percent-item__label {
@@ -249,15 +248,6 @@ input {
 
   cursor: pointer;
   opacity: 0;
-}
-
-.custom span {
-  color: var(--clr-custom);
-}
-
-.custom-hidden-input {
-  width: 100%;
-  display: none;
 }
 
 /* People area */
