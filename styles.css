@@ -211,9 +211,13 @@ input {
   border: 2px solid transparent;
 }
 
+.percent-item.clicked {
+  background: var(--clr-strong-cyan);
+}
+
 .percent-item:hover,
 .percent-item:focus {
-  background: var(--clr-strong-cyan);
+  background: var(--clr-light-grayish-cyan);
 }
 
 .percent-item--custom {
