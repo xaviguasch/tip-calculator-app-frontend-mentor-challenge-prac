@@ -57,6 +57,8 @@ const handleCustomTip = (tipValue) => {
 }
 
 const displayResults = () => {
+  resetBtn.classList.remove('disabled')
+
   if (people <= 0) {
     errorPeopleSel.classList.add('show')
     inputBoxPeople.classList.add('error')
@@ -77,18 +79,24 @@ const displayResults = () => {
 }
 
 const reset = () => {
-  tipAmountSel.textContent = `${'--'}`
-  totalAmountSel.textContent = `${'--'}`
+  if (!resetBtn.classList.contains('disabled')) {
+    tipAmountSel.textContent = `${'--'}`
+    totalAmountSel.textContent = `${'--'}`
 
-  tipPercentage = ''
-  billAmount = 0
-  people = 1
+    tipPercentage = ''
+    billAmount = 0
+    people = 1
 
-  numPeopleSel.value = people
+    numPeopleSel.value = people
+    inputMoneySel.value = billAmount
+    customTipSel.value = tipPercentage
 
-  percentItemSels.forEach((item) => {
-    item.classList.remove('clicked')
-  })
+    percentItemSels.forEach((item) => {
+      item.classList.remove('clicked')
+    })
+
+    resetBtn.classList.add('disabled')
+  }
 }
 
 inputMoneySel.addEventListener('input', () => updateBill(inputMoneySel.value))
