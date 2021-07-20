@@ -89,7 +89,7 @@ const reset = () => {
     people = 1
 
     numPeopleSel.value = people
-    inputMoneySel.value = billAmount
+    inputMoneySel.value = ''
     customTipSel.value = tipPercentage
 
     percentItemSels.forEach((item) => {
