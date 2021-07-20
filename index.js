@@ -71,9 +71,10 @@ const displayResults = () => {
 
   if (people > 0 && billAmount > 0) {
     const tipAmount = billAmount * tipPercentage
+    const tipAmountPerPerson = tipAmount / people
     const totalAmount = (billAmount + tipAmount) / people
 
-    tipAmountSel.textContent = `$${tipAmount.toFixed(2)}`
+    tipAmountSel.textContent = `$${tipAmountPerPerson.toFixed(2)}`
     totalAmountSel.textContent = `$${totalAmount.toFixed(2)}`
   }
 }
@@ -104,7 +105,5 @@ numPeopleSel.addEventListener('input', () => updatePeople(numPeopleSel.value))
 tipPercentageSels.forEach((tipSel) => {
   tipSel.addEventListener('change', (e) => handleRadioPercent(e, tipSel.value))
 })
-
 customTipSel.addEventListener('input', () => handleCustomTip(customTipSel.value))
-
 resetBtn.addEventListener('click', reset)
